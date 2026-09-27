@@ -21,7 +21,7 @@ namespace HostileTraderAnimalDoorFix
         {
             // This fixes the cases where the caravan's faction becomes hostile (such as if you attack them or you a psychic animal pulser).
             // It probably doesn't work for cases where the animal goes manhunter without angering the faction, but it is unclear whether such a scenario is possible.
-            __result = p.RaceProps.FenceBlocked && !p.Faction.HostileTo(Faction.OfPlayer);
+            __result &= p.RaceProps.FenceBlocked && !p.Faction.HostileTo(Faction.OfPlayer);
 
             return false;
         }
